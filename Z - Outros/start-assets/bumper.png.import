@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/icon.png-fc66d857429a1b59b2fa881b4c230697.stex"
+path="res://.import/bumper.png-5a57820b7a489356105e24ea6087aecc.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://start-assets/icon.png"
-dest_files=[ "res://.import/icon.png-fc66d857429a1b59b2fa881b4c230697.stex" ]
+source_file="res://Z - Outros/start-assets/bumper.png"
+dest_files=[ "res://.import/bumper.png-5a57820b7a489356105e24ea6087aecc.stex" ]
 
 [params]
 

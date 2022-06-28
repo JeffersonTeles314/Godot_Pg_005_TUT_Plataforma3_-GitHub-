@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Cenas/Jogador.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Cenas/Inimigo.tscn" type="PackedScene" id=2]
+
+[node name="Mundo1" type="Node2D"]
+
+[node name="Inimigo" parent="." instance=ExtResource( 2 )]
+
+[node name="KinematicBody2D" parent="." instance=ExtResource( 1 )]
