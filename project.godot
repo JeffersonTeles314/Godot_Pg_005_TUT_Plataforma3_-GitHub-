@@ -21,8 +21,8 @@ _global_script_class_icons={
 [application]
 
 config/name="(Projeto Tutorial 5) Plataforma 3"
-run/main_scene="res://Cenas/Atores/Jogador.tscn"
-config/icon="res://icon.png"
+run/main_scene="res://Cenas/Níveis/Mundo1.tscn"
+config/icon="res://Sprites/icon.png"
 
 [physics]
 
