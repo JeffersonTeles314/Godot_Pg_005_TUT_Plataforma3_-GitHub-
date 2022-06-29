@@ -20,5 +20,4 @@ func _physics_process(_delta):
 	if Input.is_action_pressed("cus_ui_moveresquerda"):
 		movimento.x += -velocidade
 	#Movimentação Esquerda - F
-	movimento = move_and_slide(movimento, cima)
 	pass
