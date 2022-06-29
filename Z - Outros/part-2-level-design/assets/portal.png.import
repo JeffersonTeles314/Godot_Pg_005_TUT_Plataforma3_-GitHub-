@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/portal.png-aead05909ff805293aa08d3705b32f3c.stex"
+path="res://.import/portal.png-e2208d2fd093d856db042e93f74c92d0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/portal.png"
-dest_files=[ "res://.import/portal.png-aead05909ff805293aa08d3705b32f3c.stex" ]
+source_file="res://Z - Outros/part-2-level-design/assets/portal.png"
+dest_files=[ "res://.import/portal.png-e2208d2fd093d856db042e93f74c92d0.stex" ]
 
 [params]
 

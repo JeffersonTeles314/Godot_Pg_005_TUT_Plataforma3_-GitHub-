@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/coin.png-f04b9cd408b88aba3ab0966b4da32df0.stex"
+path="res://.import/coin.png-4548a2f214e089a642d9afdaca1afd3d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/coin.png"
-dest_files=[ "res://.import/coin.png-f04b9cd408b88aba3ab0966b4da32df0.stex" ]
+source_file="res://Z - Outros/part-1-player-and-enemy/assets/coin.png"
+dest_files=[ "res://.import/coin.png-4548a2f214e089a642d9afdaca1afd3d.stex" ]
 
 [params]
 

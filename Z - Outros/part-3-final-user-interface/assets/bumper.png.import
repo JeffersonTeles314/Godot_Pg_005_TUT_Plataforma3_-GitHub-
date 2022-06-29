@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bumper.png-47785785aa6eb7e7a0af4baae66981c0.stex"
+path="res://.import/bumper.png-e4ec0d5b7ccd165dce411e6b3aeff83f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/bumper.png"
-dest_files=[ "res://.import/bumper.png-47785785aa6eb7e7a0af4baae66981c0.stex" ]
+source_file="res://Z - Outros/part-3-final-user-interface/assets/bumper.png"
+dest_files=[ "res://.import/bumper.png-e4ec0d5b7ccd165dce411e6b3aeff83f.stex" ]
 
 [params]
 

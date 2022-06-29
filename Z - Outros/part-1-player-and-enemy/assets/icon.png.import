@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/icon.png-b6a7fb2db36edd3d95dc42f1dc8c1c5d.stex"
+path="res://.import/icon.png-a9cc3a51ab5aa75b607fa2f6917e4d9d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/icon.png"
-dest_files=[ "res://.import/icon.png-b6a7fb2db36edd3d95dc42f1dc8c1c5d.stex" ]
+source_file="res://Z - Outros/part-1-player-and-enemy/assets/icon.png"
+dest_files=[ "res://.import/icon.png-a9cc3a51ab5aa75b607fa2f6917e4d9d.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bumper.png-47785785aa6eb7e7a0af4baae66981c0.stex"
+path="res://.import/bumper.png-f42116db7eae25e6687a75ccb72622fc.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/bumper.png"
-dest_files=[ "res://.import/bumper.png-47785785aa6eb7e7a0af4baae66981c0.stex" ]
+source_file="res://Z - Outros/part-1-player-and-enemy/assets/bumper.png"
+dest_files=[ "res://.import/bumper.png-f42116db7eae25e6687a75ccb72622fc.stex" ]
 
 [params]
 

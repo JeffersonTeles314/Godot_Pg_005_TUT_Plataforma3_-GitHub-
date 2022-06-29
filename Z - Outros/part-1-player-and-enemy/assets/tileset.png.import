@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tileset.png-c50288acd069fa293d7940a084811264.stex"
+path="res://.import/tileset.png-4932a2e15a6614ec5d20e520aa7bf7d6.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tileset.png"
-dest_files=[ "res://.import/tileset.png-c50288acd069fa293d7940a084811264.stex" ]
+source_file="res://Z - Outros/part-1-player-and-enemy/assets/tileset.png"
+dest_files=[ "res://.import/tileset.png-4932a2e15a6614ec5d20e520aa7bf7d6.stex" ]
 
 [params]
 

@@ -10,11 +10,17 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "KinematicBody2D",
+"class": "Actor",
+"language": "GDScript",
+"path": "res://Z - Outros/part-3-final-user-interface/src/Actors/Actor.gd"
+}, {
+"base": "KinematicBody2D",
 "class": "Atores",
 "language": "GDScript",
 "path": "res://Scripts/Atores.gd"
 } ]
 _global_script_class_icons={
+"Actor": "",
 "Atores": ""
 }
 

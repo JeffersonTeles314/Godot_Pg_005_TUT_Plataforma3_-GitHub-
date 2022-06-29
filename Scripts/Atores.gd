@@ -1,20 +1,22 @@
 extends KinematicBody2D
 class_name Atores
 
-#Constanstes - I
+#=-=-=Constanstes - I=-=-=
 const cima = Vector2(0, -1)
-const gravidade = 5
-const velocidade = 200
+const gravidade = 15
+const Aceleracao = 200
+const Velocidade_Max = 500
 const pulo = -300
-#Constanstes - F
+const atritochao = 0.2
+const atritoar = 0.005
+#=-=-=Constanstes - F=-=-=
 
-#Variável de Velocidade - I
+#=-=-=Vetor de Velocidade - I=-=-=
 var movimento = Vector2()
-#Variável de Velocidade - F
+#=-=-=Vetor de Velocidade - F=-=-=
 
-func _physics_process(_delta):
-	#Código de Gravidade - I
+func _physics_process(delta):
+	#=-=-=Código de Gravidade - I=-=-=
 	movimento.y += gravidade
-	#Código de Gravidade - F
-	print('1')
+	#=-=-=Código de Gravidade - F=-=-=
 	pass
