@@ -7,16 +7,16 @@ func _physics_process(_delta):
 	
 	#=-=-=Código de Pulo - I=-=-=
 	if is_on_floor():
-		if Input.is_action_pressed("ui_up"):
+		if Input.is_action_pressed("cus_ui_pular"):
 			movimento.y = pulo
 	#=-=-=Código de Pulo - F=-=-=
 	#=-=-=Movimentação Direita - I=-=-=
-	if Input.is_action_pressed("ui_right"):
+	if Input.is_action_pressed("cus_ui_moverdireita"):
 		movimento.x = min(movimento.x + Aceleracao , Velocidade_Max)
 	#=-=-=Movimentação Direita - F=-=-=
 	
 	#=-=-=Movimentação Esquerda - I=-=-=
-	if Input.is_action_pressed("ui_left"):
+	if Input.is_action_pressed("cus_ui_moveresquerda"):
 		movimento.x = max(movimento.x - Aceleracao , -Velocidade_Max)
 	#=-=-=Movimentação Esquerda - F=-=-=
 	

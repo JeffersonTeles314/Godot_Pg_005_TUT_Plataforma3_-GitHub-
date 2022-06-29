@@ -7,7 +7,7 @@ const gravidade = 15
 const Aceleracao = 200
 const Velocidade_Max = 500
 const pulo = -300
-const atritochao = 0.2
+const atritochao = 0.1
 const atritoar = 0.005
 #=-=-=Constanstes - F=-=-=
 
