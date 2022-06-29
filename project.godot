@@ -8,9 +8,20 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "KinematicBody2D",
+"class": "Atores",
+"language": "GDScript",
+"path": "res://Scripts/Atores.gd"
+} ]
+_global_script_class_icons={
+"Atores": ""
+}
+
 [application]
 
 config/name="(Projeto Tutorial 5) Plataforma 3"
+run/main_scene="res://Cenas/Atores/Jogador.tscn"
 config/icon="res://icon.png"
 
 [physics]

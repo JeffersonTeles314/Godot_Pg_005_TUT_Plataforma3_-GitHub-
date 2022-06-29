@@ -1,16 +1,13 @@
-extends KinematicBody2D
+extends Atores
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _physics_process(delta):
+	movimento.x = 0
+	if is_on_floor():
+		if Input.is_action_pressed("ui_up"):
+			movimento.y = pulo
+	if Input.is_action_pressed("ui_right"):
+		movimento.x += velocidade
+	if Input.is_action_pressed("ui_left"):
+		movimento.x += -velocidade
+	movimento = move_and_slide(movimento, cima)
+	pass
