@@ -17,32 +17,31 @@ vel_ins,
 direct
 ):
 	#Movimento Horizontal
-	var vel_f = Vector2.ZERO
 	if direct.x > 0:
-		vel_f.x = min(vel_ins.x + aceleracao * direct.x, velocidade_Max)
+		vel_ins.x = min(vel_ins.x + aceleracao * direct.x, velocidade_Max)
 	if direct.x < 0:
-		vel_f.x = max(vel_ins.x + aceleracao * direct.x , -velocidade_Max)
+		vel_ins.x = max(vel_ins.x + aceleracao * direct.x , -velocidade_Max)
 	#Movimento Horizontal
 	
 	#Movimento Vertical/Pulo
 	#Pulo Normal
-	if direct.y != 0.0:
-		vel_f.y = pulo * direct.y
+	if direct.y != 0:
+		vel_ins.y = pulo * direct.y
 	#Pulo Normal
 	
 	#Pulo Interrompido
-	#if Input.is_action_just_released("jump") and vel_ins.y < 0.0:
-		#vel_f.y = 0.0
+	if Input.is_action_just_released("jump") and vel_ins.y < 0.0:
+		vel_ins.y = 0.0
 	#Pulo Interrompido
 	#Movimento Vertical/Pulo
 	
 	#=-=-=Código Atrito - I=-=-=
 	if is_on_floor():
-		vel_f.x = lerp(vel_ins.x, 0, atritochao)
+		vel_ins.x = lerp(vel_ins.x, 0, atritochao)
 	else:
-		vel_f.x = lerp(vel_ins.x, 0, atritoar)
+		vel_ins.x = lerp(vel_ins.x, 0, atritoar)
 	#=-=-=Código Atrito - F=-=-=
-	return vel_f
+	return vel_ins
 
 func _physics_process(delta):
 	GetDirect()
