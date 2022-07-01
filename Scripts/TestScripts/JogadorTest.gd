@@ -13,35 +13,40 @@ func GetDirect():
 
 #=-=-=GetMov=-=-=
 func GetMov(
-vel_ins,
+mov_ins,
 direct
 ):
 	#Movimento Horizontal
 	if direct.x > 0:
-		vel_ins.x = min(vel_ins.x + aceleracao * direct.x, velocidade_Max)
+		mov_ins.x = min(mov_ins.x + aceleracao * direct.x, velocidade_Max)
 	if direct.x < 0:
-		vel_ins.x = max(vel_ins.x + aceleracao * direct.x , -velocidade_Max)
+		mov_ins.x = max(mov_ins.x + aceleracao * direct.x , -velocidade_Max)
 	#Movimento Horizontal
 	
 	#Movimento Vertical/Pulo
 	#Pulo Normal
 	if direct.y != 0:
-		vel_ins.y = pulo * direct.y
+		mov_ins.y = pulo * direct.y
 	#Pulo Normal
 	
 	#Pulo Interrompido
-	if Input.is_action_just_released("jump") and vel_ins.y < 0.0:
-		vel_ins.y = 0.0
+	if Input.is_action_just_released("cus_ui_pular") and mov_ins.y < 0.0:
+		#mov_ins.y = 0.0
+		is_jumpbreak = true
+	if is_jumpbreak == true:
+		mov_ins.y = lerp(mov_ins.y, 0, forcejumpbreak)
+		if mov_ins.y >= 0:
+			is_jumpbreak = false
 	#Pulo Interrompido
 	#Movimento Vertical/Pulo
 	
 	#=-=-=Código Atrito - I=-=-=
 	if is_on_floor():
-		vel_ins.x = lerp(vel_ins.x, 0, atritochao)
+		mov_ins.x = lerp(mov_ins.x, 0, atritochao)
 	else:
-		vel_ins.x = lerp(vel_ins.x, 0, atritoar)
+		mov_ins.x = lerp(mov_ins.x, 0, atritoar)
 	#=-=-=Código Atrito - F=-=-=
-	return vel_ins
+	return mov_ins
 
 func _physics_process(delta):
 	GetDirect()
