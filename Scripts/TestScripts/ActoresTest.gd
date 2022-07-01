@@ -1,5 +1,5 @@
 extends KinematicBody2D
-class_name Actor
+class_name ActoresTest
 
 #=-=-=Constanstes - I=-=-=
 const cima = Vector2(0, -1)

@@ -15,12 +15,18 @@ _global_script_classes=[ {
 "path": "res://Z - Outros/part-3-final-user-interface/src/Actors/Actor.gd"
 }, {
 "base": "KinematicBody2D",
+"class": "ActoresTest",
+"language": "GDScript",
+"path": "res://Scripts/TestScripts/ActoresTest.gd"
+}, {
+"base": "KinematicBody2D",
 "class": "Atores",
 "language": "GDScript",
 "path": "res://Scripts/Atores.gd"
 } ]
 _global_script_class_icons={
 "Actor": "",
+"ActoresTest": "",
 "Atores": ""
 }
 
