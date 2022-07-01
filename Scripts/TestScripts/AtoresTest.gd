@@ -1,5 +1,5 @@
 extends KinematicBody2D
-class_name ActoresTest
+class_name AtoresTest
 
 #=-=-=Constanstes - I=-=-=
 const cima = Vector2(0, -1)
@@ -11,13 +11,10 @@ const atritochao = 0.1
 const atritoar = 0.005
 #=-=-=Constanstes - F=-=-=
 
-var movimento = Vector2()
-export var direct: = Vector2(400.0, 500.0)
+var movimento = Vector2.ZERO
+var direct = Vector2.ZERO
 
-var e_pulo = false
-var _velocity: = Vector2.ZERO
-
-
-func _physics_process(delta: float) -> void:
-	_velocity.y += gravity * delta
+func _physics_process(delta):
+	movimento.y += gravidade
+	pass
 

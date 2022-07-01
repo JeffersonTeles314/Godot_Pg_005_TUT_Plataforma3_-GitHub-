@@ -1,48 +1,51 @@
+extends AtoresTest
+
 #=-=-=GetDirect=-=-=
 func GetDirect():
 	direct.x = 0
+	direct.y = 0
 	if Input.is_action_pressed("cus_ui_moverdireita"):
 		direct.x += 1
 	if Input.is_action_pressed("cus_ui_moveresquerda"):
 		direct.x -= 1
 	if is_on_floor() and Input.is_action_pressed("cus_ui_pular"):
-		direct.y = 1
+		direct.y += 1
 
 #=-=-=GetMov=-=-=
 func GetMov(
 vel_ins,
-direct,
-acel,
-e_pulo_interropido
+direct
 ):
 	#Movimento Horizontal
-	var vel_f = null
-	if direct > 0:
-		vel_f.x = min(acel.x * direct.x + vel_ins.x, Velocidade_Max)
-	if direct < 0:
-		vel_f.x = max(acel.x * direct.x - vel_ins.x, -Velocidade_Max)
+	var vel_f = Vector2.ZERO
+	if direct.x > 0:
+		vel_f.x = min(vel_ins.x + aceleracao * direct.x, velocidade_Max)
+	if direct.x < 0:
+		vel_f.x = max(vel_ins.x + aceleracao * direct.x , -velocidade_Max)
 	#Movimento Horizontal
 	
 	#Movimento Vertical/Pulo
+	#Pulo Normal
 	if direct.y != 0.0:
-		#Pulo Normal
-		velocity.y = .y * direction.y
-		#Pulo Normal
-		
-	if Input.is_action_just_released("jump") and _velocity.y < 0.0:
-		#Pulo Interrompido
-		velocity.y = 0.0
-		#Pulo Interrompido
+		vel_f.y = pulo * direct.y
+	#Pulo Normal
+	
+	#Pulo Interrompido
+	#if Input.is_action_just_released("jump") and vel_ins.y < 0.0:
+		#vel_f.y = 0.0
+	#Pulo Interrompido
 	#Movimento Vertical/Pulo
 	
 	#=-=-=Código Atrito - I=-=-=
 	if is_on_floor():
-		movimento.x = lerp(movimento.x, 0, atritochao)
+		vel_f.x = lerp(vel_ins.x, 0, atritochao)
 	else:
-		movimento.x = lerp(movimento.x, 0, atritoar)
+		vel_f.x = lerp(vel_ins.x, 0, atritoar)
 	#=-=-=Código Atrito - F=-=-=
-	return velocity
+	return vel_f
 
-func _physics_process(_delta):
+func _physics_process(delta):
+	GetDirect()
+	movimento = GetMov(movimento, direct)
 	movimento = move_and_slide(movimento, cima)
 	pass
