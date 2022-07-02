@@ -18,9 +18,9 @@ direct
 ):
 	#Movimento Horizontal
 	if direct.x > 0:
-		mov_ins.x = min(mov_ins.x + aceleracao * direct.x, velocidade_Max)
+		mov_ins.x = min(mov_ins.x + aceleracao * direct.x, velocidade_max)
 	if direct.x < 0:
-		mov_ins.x = max(mov_ins.x + aceleracao * direct.x , -velocidade_Max)
+		mov_ins.x = max(mov_ins.x + aceleracao * direct.x , -velocidade_max)
 	#Movimento Horizontal
 	
 	#Movimento Vertical/Pulo
@@ -31,7 +31,6 @@ direct
 	
 	#Pulo Interrompido
 	if Input.is_action_just_released("cus_ui_pular") and mov_ins.y < 0.0:
-		#mov_ins.y = 0.0
 		is_jumpbreak = true
 	if is_jumpbreak == true:
 		mov_ins.y = lerp(mov_ins.y, 0, forcejumpbreak)

@@ -8,7 +8,7 @@ const gravidade = 15
 
 #=-=-=Constanstes do Jogador - I=-=-=
 const aceleracao = 100
-const velocidade_Max = 500
+const velocidade_max = 500
 const pulo = -600
 const atritochao = 0.2
 const atritoar = 0.005
