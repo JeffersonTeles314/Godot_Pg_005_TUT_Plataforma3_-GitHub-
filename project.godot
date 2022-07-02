@@ -26,7 +26,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="(Projeto Tutorial 5) Plataforma 3"
+config/name="Pg_005_TUT_Plataforma3 -GitHub-"
 run/main_scene="res://Cenas/Níveis/Mundo1.tscn"
 config/icon="res://Sprites/icon.png"
 

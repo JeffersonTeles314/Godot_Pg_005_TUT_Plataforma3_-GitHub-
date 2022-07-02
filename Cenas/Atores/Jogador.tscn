@@ -15,3 +15,6 @@ shape = SubResource( 1 )
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
 region_rect = Rect2( 0, 0, 40, 20 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
