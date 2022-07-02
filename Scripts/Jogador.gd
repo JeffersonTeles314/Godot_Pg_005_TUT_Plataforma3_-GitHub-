@@ -6,10 +6,10 @@ func _physics_process(_delta):
 	#=-=-=Código-Anti-Aceleração - F=-=-=
 	
 	#=-=-=Código de Pulo - I=-=-=
-	if is_on_floor():
-		if Input.is_action_pressed("cus_ui_pular"):
-			movimento.y = pulo
+	if is_on_floor() and Input.is_action_pressed("cus_ui_pular"):
+		movimento.y = pulo
 	#=-=-=Código de Pulo - F=-=-=
+	
 	#=-=-=Movimentação Direita - I=-=-=
 	if Input.is_action_pressed("cus_ui_moverdireita"):
 		movimento.x = min(movimento.x + Aceleracao , Velocidade_Max)
