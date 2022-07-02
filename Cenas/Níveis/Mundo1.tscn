@@ -10,8 +10,8 @@
 position = Vector2( 784, 528 )
 collision_mask = 15
 
-[node name="KinematicBody2D" parent="." instance=ExtResource( 1 )]
-position = Vector2( 256, 528 )
+[node name="TestGuy" parent="." instance=ExtResource( 1 )]
+position = Vector2( 256, 496 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 3 )

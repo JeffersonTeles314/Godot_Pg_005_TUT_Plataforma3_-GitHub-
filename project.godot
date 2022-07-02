@@ -18,16 +18,10 @@ _global_script_classes=[ {
 "class": "Atores",
 "language": "GDScript",
 "path": "res://Scripts/Atores.gd"
-}, {
-"base": "KinematicBody2D",
-"class": "AtoresTest",
-"language": "GDScript",
-"path": "res://Scripts/TestScripts/AtoresTest.gd"
 } ]
 _global_script_class_icons={
 "Actor": "",
-"Atores": "",
-"AtoresTest": ""
+"Atores": ""
 }
 
 [application]
