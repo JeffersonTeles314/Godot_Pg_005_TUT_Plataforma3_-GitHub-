@@ -1,7 +1,7 @@
 extends Atores
 
 func _ready():
-	movimento.x = -velocidade_max
+	movimento.x = -velinimg
 	set_physics_process(false)
 	
 func _physics_process(delta):

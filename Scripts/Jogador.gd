@@ -47,8 +47,31 @@ direct
 	#=-=-=Código Atrito - F=-=-=
 	return mov_ins
 
+func GetAnim():
+	#=-=-=Codigo Mov.Direita=-=--=
+	if direct.x > 0:
+		$Sprite.flip_h = false
+		if  is_on_floor() == true:
+			$Sprite.play("Correndo")
+	#=-=-=Codigo Mov.Direita=-=--=
+	#=-=-=Codigo Mov.Esquerda=-=-=
+	elif direct.x < 0:
+		$Sprite.flip_h = true
+		if  is_on_floor() == true:
+			$Sprite.play("Correndo")
+	#=-=-=Codigo Mov.Esquerda=-=-=
+	#=-=-=Codigo Parado=-=-=
+	else:
+		$Sprite.play("Parado")
+	#=-=-=Codigo Parado=-=-=
+	#=-=-=Código de Pulo=-=-=
+	if is_on_floor() == false:
+		get_node("Sprite").play("Pulando")
+	#=-=-=Código de Pulo=-=-=
+
 func _physics_process(delta):
 	GetDirect()
+	GetAnim()
 	movimento = GetMov(movimento, direct)
 	movimento = move_and_slide(movimento, cima)
 	pass

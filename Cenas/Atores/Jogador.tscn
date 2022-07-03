@@ -1,10 +1,32 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scripts/Jogador.gd" type="Script" id=1]
-[ext_resource path="res://Sprites/icon.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Meus/Mario/Novo Projeto.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Meus/Mario/New Piskel (3).png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Meus/Mario/New Piskel (1).png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Meus/Mario/Pulando.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Meus/Mario/New Piskel (4).png" type="Texture" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 32, 32 )
+extents = Vector2( 7, 8 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "Parado",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "Pulando",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 3 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "Correndo",
+"speed": 12.0
+} ]
 
 [node name="Jogador" type="KinematicBody2D"]
 script = ExtResource( 1 )
@@ -12,9 +34,10 @@ script = ExtResource( 1 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
-[node name="Sprite" type="Sprite" parent="."]
-texture = ExtResource( 2 )
-region_rect = Rect2( 0, 0, 40, 20 )
-
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 2 )
+animation = "Parado"
+playing = true

@@ -30,6 +30,17 @@ config/name="Pg_005_TUT_Plataforma3 -GitHub-"
 run/main_scene="res://Cenas/Níveis/Mundo1.tscn"
 config/icon="res://Sprites/icon.png"
 
+[display]
+
+window/size/width=256
+window/size/height=224
+window/size/resizable=false
+window/size/fullscreen=true
+window/size/test_width=256
+window/size/test_height=224
+window/stretch/mode="viewport"
+window/stretch/aspect="keep"
+
 [input]
 
 cus_ui_pular={

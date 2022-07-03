@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/image.png-3d4babf1f55ecf56fc5b200e3a090b1d.stex"
+path="res://.import/MarioRun.png-cf46a60e08cbdd8ca263486c6ee22e95.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Meus/image.png"
-dest_files=[ "res://.import/image.png-3d4babf1f55ecf56fc5b200e3a090b1d.stex" ]
+source_file="res://Sprites/MarioRun.png"
+dest_files=[ "res://.import/MarioRun.png-cf46a60e08cbdd8ca263486c6ee22e95.stex" ]
 
 [params]
 
