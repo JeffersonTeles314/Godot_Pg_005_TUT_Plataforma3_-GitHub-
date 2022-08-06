@@ -1,0 +1,77 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://FNAF/Novo Projeto.png" type="Texture" id=1]
+[ext_resource path="res://FNAF/Cenas/Cam1.gd" type="Script" id=2]
+[ext_resource path="res://FNAF/Cenas/Cam2.gd" type="Script" id=3]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="Controle" type="Control"]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Cam1" type="Button" parent="."]
+show_behind_parent = true
+margin_right = 40.0
+margin_bottom = 20.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Cam1"]
+position = Vector2( -0.157776, 0 )
+scale = Vector2( 0.2, 0.2 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="Label" type="Label" parent="Cam1/AnimatedSprite"]
+margin_left = 29.767
+margin_top = 31.9956
+margin_right = 170.767
+margin_bottom = 73.9956
+text = "CAMERA 1"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Cam2" type="Button" parent="."]
+show_behind_parent = true
+margin_left = 0.36805
+margin_top = 29.0761
+margin_right = 40.368
+margin_bottom = 49.0761
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Cam2"]
+position = Vector2( -0.157776, 0 )
+scale = Vector2( 0.2, 0.2 )
+frames = SubResource( 1 )
+centered = false
+
+[node name="Label" type="Label" parent="Cam2/AnimatedSprite"]
+margin_left = 29.767
+margin_top = 31.9956
+margin_right = 170.767
+margin_bottom = 73.9956
+text = "CAMERA 2"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Cam1" to="Cam1" method="_on_Cam1_pressed"]

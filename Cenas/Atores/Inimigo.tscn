@@ -49,5 +49,4 @@ monitorable = false
 modulate = Color( 0.847059, 0.780392, 0.345098, 1 )
 position = Vector2( 0, -7.5 )
 shape = SubResource( 3 )
-
 [connection signal="body_entered" from="areadepulo" to="." method="_on_areadepulo_body_entered"]

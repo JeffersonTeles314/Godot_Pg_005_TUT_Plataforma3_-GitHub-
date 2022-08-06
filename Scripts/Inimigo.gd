@@ -8,9 +8,9 @@ func _on_areadepulo_body_entered(body):
 	if body.global_position.y > get_node("areadepulo").global_position.y:
 		return
 	else:
-		die()
+		morrer()
 
-func die() -> void:
+func morrer() -> void:
 	queue_free()
 
 func _physics_process(delta):

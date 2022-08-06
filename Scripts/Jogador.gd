@@ -1,4 +1,5 @@
 extends Atores
+signal test
 
 #=-=-=GetDirect=-=-=
 func GetDirect():
@@ -8,7 +9,7 @@ func GetDirect():
 		direct.x += 1
 	if Input.is_action_pressed("cus_ui_moveresquerda"):
 		direct.x -= 1
-	if is_on_floor() and Input.is_action_pressed("cus_ui_pular"):
+	if Input.is_action_pressed("cus_ui_pular"):
 		direct.y += 1
 
 #=-=-=GetMov=-=-=
@@ -24,19 +25,26 @@ direct
 	#Movimento Horizontal
 	
 	#Movimento Vertical/Pulo
-	#Pulo Normal
-	if direct.y != 0:
-		mov_ins.y = pulo * direct.y
-	#Pulo Normal
 	
 	#Pulo Interrompido
-	if Input.is_action_just_released("cus_ui_pular") and mov_ins.y < 0.0:
+	if Input.is_action_just_released("cus_ui_pular"):
+		mov_ins.y = 0
 		is_jumpbreak = true
-	if is_jumpbreak == true:
-		mov_ins.y = lerp(mov_ins.y, 0, forcejumpbreak)
-		if mov_ins.y >= 0:
-			is_jumpbreak = false
+	if is_jumpbreak == true and is_on_floor() == true:
+		is_jumpbreak = false
 	#Pulo Interrompido
+	
+	#Pulo Normal
+	if direct.y != 0 and is_on_floor():
+		#Pulo Único
+		mov_ins.y = pulo * direct.y
+		#Pulo Único
+		
+		#Pulo Duplo
+	if direct.y != 0 and is_jumpbreak == true:
+		mov_ins.y = pulo * direct.y
+		is_jumpbreak = false
+		#Pulo Duplo
 	#Movimento Vertical/Pulo
 	
 	#=-=-=Código Atrito - I=-=-=
@@ -69,7 +77,7 @@ func GetAnim():
 		get_node("Sprite").play("Pulando")
 	#=-=-=Código de Pulo=-=-=
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	GetDirect()
 	GetAnim()
 	movimento = GetMov(movimento, direct)
