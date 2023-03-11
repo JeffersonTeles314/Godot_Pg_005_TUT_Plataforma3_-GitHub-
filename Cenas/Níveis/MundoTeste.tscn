@@ -1,29 +1,28 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=5 format=3 uid="uid://xwp5wo3jh7kr"]
 
-[ext_resource path="res://Cenas/Atores/Jogador.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Cenas/Atores/Inimigo.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Sprites/icon.png" type="Texture2D" id=3]
+[ext_resource type="PackedScene" uid="uid://cs6ghhrdnqjsi" path="res://Cenas/Atores/Jogador.tscn" id="1"]
+[ext_resource type="PackedScene" path="res://Cenas/Atores/Inimigo.tscn" id="2"]
+[ext_resource type="Texture2D" uid="uid://c44ry8g18ic5v" path="res://Sprites/icon.png" id="3"]
 
-
-[sub_resource type="RectangleShape2D" id=1]
-size = Vector2( 512, 40 )
+[sub_resource type="RectangleShape2D" id="1"]
+size = Vector2(512, 40)
 
 [node name="Mundo1" type="Node2D"]
 
-[node name="Inimigo" parent="." instance=ExtResource( 2 )]
-position = Vector2( 784, 416 )
+[node name="Inimigo" parent="." instance=ExtResource("2")]
+position = Vector2(784, 416)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2( 784, 416 )
+position = Vector2(784, 416)
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2( -272, 152 )
-scale = Vector2( 16, 1.25 )
-texture = ExtResource( 3 )
+position = Vector2(-272, 152)
+scale = Vector2(16, 1.25)
+texture = ExtResource("3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( -272, 152 )
-shape = SubResource( 1 )
+position = Vector2(-272, 152)
+shape = SubResource("1")
 
-[node name="TestGuy" parent="." instance=ExtResource( 1 )]
-position = Vector2( 232, 448 )
+[node name="TestGuy" parent="." instance=ExtResource("1")]
+position = Vector2(232, 448)

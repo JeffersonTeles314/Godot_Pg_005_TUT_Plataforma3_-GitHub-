@@ -1,5 +1,4 @@
 extends Atores
-signal test
 
 #=-=-=GetDirect=-=-=
 func GetDirect():
@@ -18,9 +17,9 @@ mov_ins,
 direct
 ):
 	#Movimento Horizontal
-	if direct.x > 0:
+	if direct.x > 0.0:
 		mov_ins.x = min(mov_ins.x + aceleracao * direct.x, velocidade_max)
-	if direct.x < 0:
+	if direct.x < 0.0:
 		mov_ins.x = max(mov_ins.x + aceleracao * direct.x , -velocidade_max)
 	#Movimento Horizontal
 	
@@ -28,20 +27,20 @@ direct
 	
 	#Pulo Interrompido
 	if Input.is_action_just_released("cus_ui_pular"):
-		mov_ins.y = 0
+		mov_ins.y = 0.0
 		is_jumpbreak = true
 	if is_jumpbreak == true and is_on_floor() == true:
 		is_jumpbreak = false
 	#Pulo Interrompido
 	
 	#Pulo Normal
-	if direct.y != 0 and is_on_floor():
+	if direct.y != 0.0 and is_on_floor():
 		#Pulo Único
 		mov_ins.y = pulo * direct.y
 		#Pulo Único
 		
 		#Pulo Duplo
-	if direct.y != 0 and is_jumpbreak == true:
+	if direct.y != 0.0 and is_jumpbreak == true:
 		mov_ins.y = pulo * direct.y
 		is_jumpbreak = false
 		#Pulo Duplo

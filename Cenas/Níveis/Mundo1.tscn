@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://64u40ihvysqn"]
 
-[ext_resource type="PackedScene" path="res://Cenas/Atores/Jogador.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://cs6ghhrdnqjsi" path="res://Cenas/Atores/Jogador.tscn" id="1"]
 [ext_resource type="PackedScene" path="res://Cenas/Atores/Inimigo.tscn" id="2"]
 [ext_resource type="TileSet" path="res://Tilesets/MarioTiles.tres" id="3"]
 

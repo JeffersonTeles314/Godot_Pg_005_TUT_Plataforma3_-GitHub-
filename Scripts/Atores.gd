@@ -2,7 +2,7 @@ extends CharacterBody2D
 class_name Atores
 
 #=-=-=Constanstes - I=-=-=
-const cima = Vector2(0, -1)
+const cima = Vector2(0.0, -1.0)
 const gravidade = 15
 #=-=-=Constanstes - F=-=-=
 
@@ -16,7 +16,7 @@ const forcejumpbreak = 0.5
 var is_jumpbreak = false 
 #=-=-=Constanstes do Jogador - F=-=-=
 
-const velinimg = 50
+const velinimg = 50.0
 
 #=-=-=Vetores de Movimento - F=-=-=
 var movimento = Vector2.ZERO

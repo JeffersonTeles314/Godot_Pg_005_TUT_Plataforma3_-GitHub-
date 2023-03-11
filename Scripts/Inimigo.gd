@@ -13,13 +13,13 @@ func _on_areadepulo_body_entered(body):
 func morrer() -> void:
 	queue_free()
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	set_velocity(movimento)
 	set_up_direction(cima)
 	move_and_slide()
 	movimento.y = velocity.y
 	if is_on_wall():
-		movimento.x *= -1
+		movimento.x *= -1.0
 	pass
 
 

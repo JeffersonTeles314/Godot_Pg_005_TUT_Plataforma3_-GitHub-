@@ -1,43 +1,56 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=9 format=3 uid="uid://cs6ghhrdnqjsi"]
 
-[ext_resource path="res://Scripts/Jogador.gd" type="Script" id=1]
-[ext_resource path="res://Sprites/Meus/Mario/Novo Projeto.png" type="Texture2D" id=2]
-[ext_resource path="res://Sprites/Meus/Mario/New Piskel (3).png" type="Texture2D" id=3]
-[ext_resource path="res://Sprites/Meus/Mario/New Piskel (1).png" type="Texture2D" id=4]
-[ext_resource path="res://Sprites/Meus/Mario/Pulando.png" type="Texture2D" id=5]
-[ext_resource path="res://Sprites/Meus/Mario/New Piskel (4).png" type="Texture2D" id=6]
+[ext_resource type="Script" path="res://Scripts/Jogador.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://cwpn22u8plt3j" path="res://Sprites/Meus/Mario/Novo Projeto.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://stvw3jepuc4o" path="res://Sprites/Meus/Mario/New Piskel (3).png" id="3"]
+[ext_resource type="Texture2D" uid="uid://bgm7trxx6wuqq" path="res://Sprites/Meus/Mario/New Piskel (1).png" id="4"]
+[ext_resource type="Texture2D" uid="uid://8aamvqwph4kf" path="res://Sprites/Meus/Mario/Pulando.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://clpj7atx1nig5" path="res://Sprites/Meus/Mario/New Piskel (4).png" id="6"]
 
-[sub_resource type="RectangleShape2D" id=1]
-size = Vector2( 7, 8 )
+[sub_resource type="RectangleShape2D" id="1"]
+size = Vector2(7, 8)
 
-[sub_resource type="SpriteFrames" id=2]
-animations = [ {
-"frames": [ ExtResource( 5 ) ],
-"loop": true,
-"name": "Pulando",
-"speed": 5.0
+[sub_resource type="SpriteFrames" id="2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4")
 }, {
-"frames": [ ExtResource( 4 ), ExtResource( 3 ), ExtResource( 6 ) ],
+"duration": 1.0,
+"texture": ExtResource("3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6")
+}],
 "loop": true,
-"name": "Correndo",
+"name": &"Correndo",
 "speed": 12.0
 }, {
-"frames": [ ExtResource( 2 ) ],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2")
+}],
 "loop": true,
-"name": "Parado",
+"name": &"Parado",
 "speed": 5.0
-} ]
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5")
+}],
+"loop": true,
+"name": &"Pulando",
+"speed": 5.0
+}]
 
 [node name="Jogador" type="CharacterBody2D"]
-script = ExtResource( 1 )
+script = ExtResource("1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 1 )
+shape = SubResource("1")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-current = true
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
-frames = SubResource( 2 )
-animation = "Parado"
-playing = true
+sprite_frames = SubResource("2")
+animation = &"Parado"
