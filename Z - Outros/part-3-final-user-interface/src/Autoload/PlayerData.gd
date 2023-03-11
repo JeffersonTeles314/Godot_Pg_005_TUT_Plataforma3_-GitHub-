@@ -4,8 +4,8 @@ extends Node
 signal updated
 signal died
 
-var score: = 0 setget set_score
-var deaths: = 0 setget set_deaths
+var score: = 0 : set = set_score
+var deaths: = 0 : set = set_deaths
 
 
 func reset():

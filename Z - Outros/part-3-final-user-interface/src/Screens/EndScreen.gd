@@ -1,7 +1,7 @@
 extends Control
 
 
-onready var result: Label = $Result
+@onready var result: Label = $Result
 
 
 func _ready() -> void:

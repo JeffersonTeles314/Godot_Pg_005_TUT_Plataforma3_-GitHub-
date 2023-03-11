@@ -1,7 +1,7 @@
 extends Actor
 
 
-onready var stomp_area: Area2D = $StompArea2D
+@onready var stomp_area: Area2D = $StompArea2D
 
 
 func _ready() -> void:
@@ -10,7 +10,10 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	_velocity.y = move_and_slide(_velocity, FLOOR_NORMAL).y
+	set_velocity(_velocity)
+	set_up_direction(FLOOR_NORMAL)
+	move_and_slide()
+	_velocity.y = velocity.y
 	_velocity.x *= -1 if is_on_wall() else 1
 
 

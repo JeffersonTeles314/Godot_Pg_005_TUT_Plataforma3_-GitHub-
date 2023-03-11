@@ -1,7 +1,7 @@
 extends Actor
 
 
-onready var stomp_area: Area2D = $StompArea2D
+@onready var stomp_area: Area2D = $StompArea2D
 
 
 func _ready() -> void:
@@ -11,7 +11,11 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	var snap: = Vector2.DOWN * 65.0
-	_velocity.y = move_and_slide_with_snap(_velocity, snap, FLOOR_NORMAL).y
+	set_velocity(_velocity)
+	# TODOConverter40 looks that snap in Godot 4.0 is float, not vector like in Godot 3 - previous value `snap`
+	set_up_direction(FLOOR_NORMAL)
+	move_and_slide()
+	_velocity.y = velocity.y
 	_velocity.x *= -1 if is_on_wall() else 1
 
 

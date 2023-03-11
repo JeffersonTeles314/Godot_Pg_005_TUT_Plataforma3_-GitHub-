@@ -1,20 +1,20 @@
 extends Node
 
 
-onready var scene_tree: SceneTree = get_tree()
-onready var score_label: Label = $Score
-onready var pause_overlay: ColorRect = $PauseOverlay
-onready var title_label: Label = $PauseOverlay/Title
-onready var main_screen_button: Button = $PauseOverlay/PauseMenu/MainScreenButton
+@onready var scene_tree: SceneTree = get_tree()
+@onready var score_label: Label = $Score
+@onready var pause_overlay: ColorRect = $PauseOverlay
+@onready var title_label: Label = $PauseOverlay/Title
+@onready var main_screen_button: Button = $PauseOverlay/PauseMenu/MainScreenButton
 
 const MESSAGE_DIED: = "You died"
 
-var paused: = false setget set_paused
+var paused: = false : set = set_paused
 
 
 func _ready() -> void:
-	PlayerData.connect("updated", self, "update_interface")
-	PlayerData.connect("died", self, "_on_Player_died")
+	PlayerData.connect("updated",Callable(self,"update_interface"))
+	PlayerData.connect("died",Callable(self,"_on_Player_died"))
 	update_interface()
 
 

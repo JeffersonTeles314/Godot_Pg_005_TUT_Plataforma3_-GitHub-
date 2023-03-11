@@ -5,8 +5,8 @@
 
 
 [node name="RetryButton" type="Button"]
-margin_right = 274.0
-margin_bottom = 87.0
+offset_right = 274.0
+offset_bottom = 87.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Retry"

@@ -1,15 +1,15 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://src/Actors/Player.gd" type="Script" id=1]
-[ext_resource path="res://assets/player.png" type="Texture" id=2]
+[ext_resource path="res://assets/player.png" type="Texture2D" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 40, 41 )
+size = Vector2( 40, 41 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 44.9017, 48 )
+size = Vector2( 44.9017, 48 )
 
-[node name="Player" type="KinematicBody2D"]
+[node name="Player" type="CharacterBody2D"]
 collision_mask = 4
 script = ExtResource( 1 )
 speed = Vector2( 800, 1350 )
@@ -21,13 +21,13 @@ process_mode = 0
 limit_left = 0
 limit_bottom = 1080
 limit_smoothed = true
-smoothing_enabled = true
-drag_margin_left = 0.0
-drag_margin_right = 0.0
+follow_smoothing_enabled = true
+drag_left_margin = 0.0
+drag_right_margin = 0.0
 editor_draw_limits = true
 editor_draw_drag_margin = true
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource( 2 )
 offset = Vector2( 0, -48.3333 )
 

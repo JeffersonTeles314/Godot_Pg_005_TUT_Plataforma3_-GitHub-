@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://assets/bumper.png" type="Texture" id=1]
+[ext_resource path="res://assets/bumper.png" type="Texture2D" id=1]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 24.8127
@@ -12,7 +12,7 @@ __meta__ = {
 "_edit_vertical_guides_": [  ]
 }
 
-[node name="bumper" type="Sprite" parent="."]
+[node name="bumper" type="Sprite2D" parent="."]
 position = Vector2( 0, -40 )
 texture = ExtResource( 1 )
 

@@ -58,28 +58,31 @@ direct
 func GetAnim():
 	#=-=-=Codigo Mov.Direita=-=--=
 	if direct.x > 0:
-		$Sprite.flip_h = false
+		$Sprite2D.flip_h = false
 		if  is_on_floor() == true:
-			$Sprite.play("Correndo")
+			$Sprite2D.play("Correndo")
 	#=-=-=Codigo Mov.Direita=-=--=
 	#=-=-=Codigo Mov.Esquerda=-=-=
 	elif direct.x < 0:
-		$Sprite.flip_h = true
+		$Sprite2D.flip_h = true
 		if  is_on_floor() == true:
-			$Sprite.play("Correndo")
+			$Sprite2D.play("Correndo")
 	#=-=-=Codigo Mov.Esquerda=-=-=
 	#=-=-=Codigo Parado=-=-=
 	else:
-		$Sprite.play("Parado")
+		$Sprite2D.play("Parado")
 	#=-=-=Codigo Parado=-=-=
 	#=-=-=Código de Pulo=-=-=
 	if is_on_floor() == false:
-		get_node("Sprite").play("Pulando")
+		get_node("Sprite2D").play("Pulando")
 	#=-=-=Código de Pulo=-=-=
 
 func _physics_process(_delta):
 	GetDirect()
 	GetAnim()
 	movimento = GetMov(movimento, direct)
-	movimento = move_and_slide(movimento, cima)
+	set_velocity(movimento)
+	set_up_direction(cima)
+	move_and_slide()
+	movimento = velocity
 	pass

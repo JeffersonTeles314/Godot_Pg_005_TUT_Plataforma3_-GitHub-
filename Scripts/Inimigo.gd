@@ -14,7 +14,10 @@ func morrer() -> void:
 	queue_free()
 
 func _physics_process(delta):
-	movimento.y = move_and_slide(movimento, cima).y
+	set_velocity(movimento)
+	set_up_direction(cima)
+	move_and_slide()
+	movimento.y = velocity.y
 	if is_on_wall():
 		movimento.x *= -1
 	pass
