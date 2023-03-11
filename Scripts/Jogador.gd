@@ -49,9 +49,9 @@ direct
 	
 	#=-=-=Código Atrito - I=-=-=
 	if is_on_floor():
-		mov_ins.x = lerp(mov_ins.x, 0, atritochao)
+		mov_ins.x = lerp(mov_ins.x, 0.0, atritochao)
 	else:
-		mov_ins.x = lerp(mov_ins.x, 0, atritoar)
+		mov_ins.x = lerp(mov_ins.x, 0.0, atritoar)
 	#=-=-=Código Atrito - F=-=-=
 	return mov_ins
 
