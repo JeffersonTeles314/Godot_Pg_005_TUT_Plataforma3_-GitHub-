@@ -1,5 +1,5 @@
 extends CharacterBody2D
-class_name Atores
+class_name atores_class
 
 #=-=-=Constanstes - I=-=-=
 const cima = Vector2(0.0, -1.0)

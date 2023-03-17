@@ -1,4 +1,4 @@
-extends Atores
+extends atores_class
 
 #=-=-=GetDirect=-=-=
 func GetDirect():
