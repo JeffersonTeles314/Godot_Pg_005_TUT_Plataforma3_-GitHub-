@@ -78,11 +78,14 @@ func GetAnim():
 		get_node_sprite2D.play("Pulando")
 	#=-=-=Código de Pulo=-=-=
 
+
 func _physics_process(_delta):
 	GetDirect()
 	GetAnim()
-	velocity = GetMov(velocity, direct)
-	set_velocity(velocity)
+	movimento = GetMov(movimento, direct)
+	set_velocity(movimento)
 	set_up_direction(cima)
 	move_and_slide()
+	movimento = velocity
+	movimento.y += gravidade
 	pass

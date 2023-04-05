@@ -20,9 +20,9 @@ const velinimg = 50.0
 
 #=-=-=Vetores de Movimento - F=-=-=
 var direct = Vector2.ZERO
+var movimento = Vector2.ZERO
 #=-=-=Vetores de Movimento - F=-=-=
 
 func _physics_process(_delta):
-	velocity.y += gravidade
 	pass
 

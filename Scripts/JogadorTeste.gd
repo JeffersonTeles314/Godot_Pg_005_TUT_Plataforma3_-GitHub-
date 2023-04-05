@@ -34,7 +34,7 @@ func _physics_process(_delta):
 	set_up_direction(cima)
 	move_and_slide()
 	movimento = velocity
-	movimento.y += gravidade
+	velocity.y += gravidade
 	pass
 
 #=-=-=GetDirect=-=-=
