@@ -1,7 +1,7 @@
 extends atores_class
 
 func _ready():
-	movimento.x = -velinimg
+	velocity.x = -velinimg
 	set_physics_process(false)
 	
 func _on_areadepulo_body_entered(body):
@@ -14,12 +14,12 @@ func morrer() -> void:
 	queue_free()
 
 func _physics_process(_delta):
-	set_velocity(movimento)
+	set_velocity(velocity)
 	set_up_direction(cima)
 	move_and_slide()
-	movimento.y = velocity.y
+	velocity.y = velocity.y
 	if is_on_wall():
-		movimento.x *= -1.0
+		velocity.x *= -1.0
 	pass
 
 

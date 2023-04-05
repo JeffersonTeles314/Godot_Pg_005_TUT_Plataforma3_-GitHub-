@@ -1,52 +1,60 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=8 format=3 uid="uid://dkgske2cynhk7"]
 
-[ext_resource path="res://Sprites/Meus/Goomba/Camada 2.png" type="Texture2D" id=1]
-[ext_resource path="res://Scripts/Inimigo.gd" type="Script" id=2]
-[ext_resource path="res://Sprites/Meus/Goomba/Camada 3.png" type="Texture2D" id=3]
-[ext_resource path="res://Sprites/Meus/Goomba/Camada 4.png" type="Texture2D" id=4]
+[ext_resource type="Texture2D" uid="uid://ce1jceq1jr5ho" path="res://Sprites/Meus/Goomba/Camada 2.png" id="1"]
+[ext_resource type="Script" path="res://Scripts/Inimigo.gd" id="1_te4by"]
+[ext_resource type="Texture2D" uid="uid://dbtuujhe3ww5b" path="res://Sprites/Meus/Goomba/Camada 3.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://p3fv0jn1hxj3" path="res://Sprites/Meus/Goomba/Camada 4.png" id="4"]
 
-[sub_resource type="RectangleShape2D" id=1]
-size = Vector2( 8, 6.5 )
+[sub_resource type="RectangleShape2D" id="1"]
+size = Vector2(8, 6.5)
 
-[sub_resource type="SpriteFrames" id=2]
-animations = [ {
-"frames": [ ExtResource( 1 ), ExtResource( 3 ) ],
+[sub_resource type="SpriteFrames" id="2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3")
+}],
 "loop": true,
-"name": "Correndo",
+"name": &"Correndo",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 4 ) ],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4")
+}],
 "loop": true,
-"name": "Parado",
+"name": &"Parado",
 "speed": 5.0
-} ]
+}]
 
-[sub_resource type="RectangleShape2D" id=3]
-size = Vector2( 10, 1.5 )
+[sub_resource type="RectangleShape2D" id="3"]
+size = Vector2(10, 1.5)
 
 [node name="Inimigo" type="CharacterBody2D"]
-script = ExtResource( 2 )
+script = ExtResource("1_te4by")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 1.5 )
-shape = SubResource( 1 )
+position = Vector2(0, 1.5)
+shape = SubResource("1")
 
 [node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
-position = Vector2( -2.38419e-07, -2.66667 )
-scale = Vector2( 0.2, 0.266667 )
-rect = Rect2( -50, -20, 100, 60 )
-process_parent = true
-physics_process_parent = true
+position = Vector2(-2.38419e-07, -2.66667)
+scale = Vector2(0.2, 0.266667)
+rect = Rect2(-50, -20, 100, 60)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-frames = SubResource( 2 )
-animation = "Correndo"
+sprite_frames = SubResource("2")
+animation = &"Correndo"
 
 [node name="areadepulo" type="Area2D" parent="."]
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="areadepulo"]
-modulate = Color( 0.847059, 0.780392, 0.345098, 1 )
-position = Vector2( 0, -7.5 )
-shape = SubResource( 3 )
+modulate = Color(0.847059, 0.780392, 0.345098, 1)
+position = Vector2(0, -7.5)
+shape = SubResource("3")
+
 [connection signal="body_entered" from="areadepulo" to="." method="_on_areadepulo_body_entered"]

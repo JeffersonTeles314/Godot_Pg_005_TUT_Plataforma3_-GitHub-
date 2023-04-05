@@ -1,6 +1,41 @@
-extends atores_class
+extends CharacterBody2D
 
+#Scripts Nos Nós Intancados e nos Normais diferença
+#Importancia do Onready Para GetNodes
 @onready var get_node_sprite2D = $Sprite2D 
+
+#=-=-=Constanstes - I=-=-=
+const cima = Vector2(0.0, -1.0)
+const gravidade = 15
+#=-=-=Constanstes - F=-=-=
+
+#=-=-=Constanstes do Jogador - I=-=-=
+const aceleracao = 50
+const velocidade_max = 200
+const pulo = -300
+const atritochao = 0.2
+const atritoar = 0.005
+const forcejumpbreak = 0.5
+var is_jumpbreak = false 
+#=-=-=Constanstes do Jogador - F=-=-=
+
+const velinimg = 50.0
+
+#=-=-=Vetores de Movimento - F=-=-=
+var movimento = Vector2.ZERO
+var direct = Vector2.ZERO
+#=-=-=Vetores de Movimento - F=-=-=
+
+func _physics_process(_delta):
+	GetDirect()
+	GetAnim()
+	movimento = GetMov(movimento, direct)
+	set_velocity(movimento)
+	set_up_direction(cima)
+	move_and_slide()
+	movimento = velocity
+	movimento.y += gravidade
+	pass
 
 #=-=-=GetDirect=-=-=
 func GetDirect():
@@ -77,12 +112,3 @@ func GetAnim():
 	if is_on_floor() == false:
 		get_node_sprite2D.play("Pulando")
 	#=-=-=Código de Pulo=-=-=
-
-func _physics_process(_delta):
-	GetDirect()
-	GetAnim()
-	velocity = GetMov(velocity, direct)
-	set_velocity(velocity)
-	set_up_direction(cima)
-	move_and_slide()
-	pass

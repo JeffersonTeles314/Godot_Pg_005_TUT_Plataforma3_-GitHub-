@@ -19,11 +19,10 @@ var is_jumpbreak = false
 const velinimg = 50.0
 
 #=-=-=Vetores de Movimento - F=-=-=
-var movimento = Vector2.ZERO
 var direct = Vector2.ZERO
 #=-=-=Vetores de Movimento - F=-=-=
 
-func _physics_process(delta):
-	movimento.y += gravidade
+func _physics_process(_delta):
+	velocity.y += gravidade
 	pass
 
