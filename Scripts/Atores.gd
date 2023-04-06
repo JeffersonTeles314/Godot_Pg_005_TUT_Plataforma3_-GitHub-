@@ -14,6 +14,7 @@ const atritochao = 0.2
 const atritoar = 0.005
 const forcejumpbreak = 0.5
 var is_jumpbreak = false 
+var is_DobleJump = 0
 #=-=-=Constanstes do Jogador - F=-=-=
 
 const velinimg = 50.0

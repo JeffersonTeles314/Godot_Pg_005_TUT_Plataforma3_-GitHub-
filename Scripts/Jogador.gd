@@ -27,14 +27,6 @@ direct
 	
 	#Movimento Vertical/Pulo
 	
-	#Pulo Interrompido
-	if Input.is_action_just_released("cus_ui_pular"):
-		mov_ins.y = 0.0
-		is_jumpbreak = true
-	if is_jumpbreak == true and is_on_floor() == true:
-		is_jumpbreak = false
-	#Pulo Interrompido
-	
 	#Pulo Normal
 	if direct.y != 0.0 and is_on_floor():
 		#Pulo Único
@@ -42,10 +34,18 @@ direct
 		#Pulo Único
 		
 		#Pulo Duplo
-	if direct.y != 0.0 and is_jumpbreak == true:
+	if is_on_floor() == true:
+		is_DobleJump = 0
+	if direct.y != 0.0 and is_DobleJump < 2:
 		mov_ins.y = pulo * direct.y
-		is_jumpbreak = false
 		#Pulo Duplo
+	
+	#Pulo Interrompido
+	if Input.is_action_just_released("cus_ui_pular"):
+		if mov_ins.y < 0:
+			mov_ins.y = 0.0
+		is_DobleJump =+ 1
+	#Pulo Interrompido
 	#Movimento Vertical/Pulo
 	
 	#=-=-=Código Atrito - I=-=-=

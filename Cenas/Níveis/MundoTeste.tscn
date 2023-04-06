@@ -12,6 +12,9 @@ size = Vector2(1024, 80)
 [node name="Inimigo" parent="." instance=ExtResource("2")]
 position = Vector2(456, 512)
 
+[node name="Jogador" parent="." instance=ExtResource("1")]
+position = Vector2(296, 512)
+
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(784, 416)
 
@@ -23,6 +26,3 @@ texture = ExtResource("3")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(-272, 152)
 shape = SubResource("1")
-
-[node name="Jogador" parent="." instance=ExtResource("1")]
-position = Vector2(296, 512)
